@@ -1,0 +1,134 @@
+.promo {
+    background-color: #D3A5F8;
+}
+
+.promo__header {
+    display: flex;
+    flex-direction: row;
+    padding: 0 70px;
+    justify-content: space-between;
+    margin: 0 auto 0;
+    min-height: 74px;
+}
+
+.promo__logo {
+    height: 38px;
+    width: 38px;
+    margin: 18px 0;
+    background-image: url('../../images/header_logo.svg');
+    background-size: cover;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.promo__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 21px 0;
+}
+
+.promo__reg-link {
+    text-decoration: none;
+    color: #000;
+    text-align: right;
+    font-size: 12px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    margin: 29px 30px 29px 0;
+}
+
+.promo__log-container {
+    width: 76px;
+    height: 32px;
+    background-color: #000;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.promo__log-link {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 12px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.promo__main {
+    min-height: 524px;
+    padding: 184px auto 224px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo__title {
+    color: #000;
+    text-align: center;
+    font-size: 50px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -2px;
+    max-width: 730px;
+    position: relative;
+}
+
+.promo__img {
+    position: absolute;
+}
+
+@media screen and (max-width: 349px) {
+    .promo__header {
+        padding: 0 14px;
+    }
+
+    .promo__nav {
+        margin: 29px 0;
+    }
+
+    .promo__reg-link {
+        font-size: 10px;
+        margin-right: 14px;
+    }
+
+    .promo__log-container {
+        width: 54px;
+        height: 26px;
+    }
+
+    .promo__log-link {
+        font-size: 10px;
+    }
+
+    .promo__main {
+        min-height: 570px;
+    }
+
+    .promo__title {
+        font-size: 31px;
+        line-height: 39px;
+        letter-spacing: -1.24px;
+        max-width: 300px;
+        position: relative;
+    }
+
+    .promo__img {
+        position: absolute;
+        width: 248.005px;
+        height: 248.004px;
+    }
+}

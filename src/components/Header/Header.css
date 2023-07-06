@@ -1,0 +1,109 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 0 70px;
+    justify-content: space-between;
+    margin: 0 auto 0;
+    min-height: 74px;
+}
+
+.header__logo {
+    height: 38px;
+    width: 38px;
+    margin: 18px 0;
+    background-image: url('../../images/header_logo.svg');
+    background-size: cover;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header__nav {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 16px;
+    padding: 28px 0;
+    margin: 0;
+    list-style-type: none;
+
+}
+
+.header__nav-link {
+    color: #000;
+    text-align: right;
+    font-size: 13px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    text-decoration: none;
+}
+
+.header__profile {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    border-radius: 40px;
+    background: #FFF;
+    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+    margin: 21px 0;
+    text-decoration: none;
+
+}
+
+.header__profile-title {
+    color: #000;
+    font-size: 13px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 12px;
+    margin: 9.5px 0px 9.5px 11px;
+}
+
+.header__profile-container {
+    width: 26px;
+    height: 26px;
+    border-radius: 50px;
+    background: #F9F9F9;
+    margin: 3px 3px 3px 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__profile-icon {
+    width: 10.383px;
+    height: 10.669px;
+}
+
+.header__hiden-icon {
+    display: none
+}
+
+@media screen and (min-width: 320px) and (max-width: 900px) {
+    .header {
+        padding: 0 auto;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__profile {
+        display: none;
+    }
+
+    .header__hiden-icon {
+        display: block;
+        width: 44px;
+        height: 44px;
+        margin: 15px 0 15px auto;
+        background-image: url(../../images/header_hiden-icon.svg);
+    }
+}
+
+@media screen and (max-width: 349px) {
+    .header {
+        padding: 0 14px;
+    }
+}
