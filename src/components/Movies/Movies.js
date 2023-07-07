@@ -5,11 +5,11 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-function Movies() {
+function Movies(props) {
 
     return (
         <>
-            <Header />
+            <Header openNavTabMenu={props.openNavTabMenu} />
             <SearchForm />
             <MoviesCardList>
                 <>

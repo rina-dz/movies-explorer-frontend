@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import "./AboutMe.css";
 import aboutme_png from '../../images/aboutme_png.png';
 
 function AboutMe() {
 
     return (
-        <section className="aboutme">
+        <section className="aboutme" id='aboutme'>
             <div className="aboutme__title-container">
                 <h2 className="aboutme__title">Студент</h2>
             </div>
@@ -24,7 +23,7 @@ function AboutMe() {
                         как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и
                         ушёл с постоянной работы.
                     </p>
-                    <Link className="aboutme__article-link link-button">Github</Link>
+                    <a className="aboutme__article-link link-button" href='https://github.com/rina-dz' target="_blank" rel="noreferrer" >Github</a>
                 </div>
                 <img className="aboutme__article-img" src={aboutme_png} alt="фото студента" />
             </article>

@@ -3,11 +3,11 @@ import "./Profile.css";
 import Header from '../Header/Header';
 import { Link } from 'react-router-dom';
 
-function Profile() {
+function Profile(props) {
 
     return (
         <>
-        <Header />
+        <Header openNavTabMenu={props.openNavTabMenu} />
         <section className="profile">
             <p className="profile__title">Привет, Арина!</p>
             <form className="profile__form">

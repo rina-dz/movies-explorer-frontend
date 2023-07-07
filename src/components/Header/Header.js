@@ -4,7 +4,7 @@ import "./Header.css";
 import profile_icon from '../../images/profile_icon.svg';
 import Navigation from '../Navigation/Navigation';
 
-function Header() {
+function Header(props) {
 
     return (
         <header className="header">
@@ -16,7 +16,7 @@ function Header() {
                     <img className="header__profile-icon" src={profile_icon} alt="Иконка профиля" />
                 </div>
             </Link>
-            <div className='header__hiden-icon link-button'></div>
+            <div className='header__hiden-icon link-button' onClick={props.openNavTabMenu}></div>
         </header>
     )
 }

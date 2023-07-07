@@ -30,6 +30,7 @@
 .aboutme__text-container {
     display: flex;
     flex-direction: column;
+    width: 55%;
     max-width: 600px;
     padding: 0;
     margin: 0;
@@ -82,8 +83,10 @@
 }
 
 .aboutme__article-img {
-    width: 270px;
-    height: 327px;
+    width: 38%;
+    height: 120%;
+    max-width: 270px;
+    max-height: 327px;
     border-radius: 10px;
     margin: 0;
     padding: 0;
@@ -93,14 +96,13 @@
     display: none;
 }
 
-@media screen and (min-width: 350px) and (max-width: 900px) {
+@media screen and (min-width: 651) and (max-width: 900px) {
     .aboutme {
         padding: 110px 50px 0;
     }
 
     .aboutme__article-img {
-        width: 255px;
-        height: 307p
+        width: 38%;
     }
 
     .aboutme__article-text {
@@ -125,9 +127,20 @@
     }
 }
 
-@media screen and (max-width: 349px) {
+@media screen and (min-width: 319px) and (max-width: 650px) {
     .aboutme {
         padding: 70px 14px 0;
+    }
+
+    .aboutme__article {
+        justify-content: center;
+    }
+
+    .aboutme__text-container {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 310px;
     }
 
     .aboutme__article-hidden-img {
@@ -144,7 +157,7 @@
     .aboutme__article-text {
         font-size: 11px;
         line-height: 16px;
-        max-width: 292px;
+        max-width: 95%;
         margin-bottom: 40px;
     }
 
