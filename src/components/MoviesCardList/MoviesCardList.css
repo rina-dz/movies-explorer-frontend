@@ -1,17 +1,19 @@
 .movies {
-    width: 100%;
     padding: 70px 70px 30px;
     display: grid;
     grid-template-columns: repeat(3, min-content);
     grid-auto-rows: min-content;
     column-gap: 24px;
     row-gap: 30px;
-    margin: 0 auto 0;
+    margin: 0 auto;
     width: min-content;
+    max-width: 1140px;
 }
 
 .movies__container {
     width: 100%;
+    margin: 0 auto;
+    max-width: 1140px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,14 +37,14 @@
     border: none;
 }
 
-@media screen and (min-width: 760px) and (max-width: 900px) {
+@media screen and (min-width: 760px) and (max-width: 1279px) {
     .movies {
         max-width: 100%;
         padding: 70px 30px 80px;
         grid-template-columns: repeat(2, min-content);
         grid-auto-rows: min-content;
         column-gap: 30px;
-        row-gap: 50px;
+        row-gap: 36px;
     }
 }
 

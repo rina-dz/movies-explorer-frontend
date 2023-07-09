@@ -3,8 +3,13 @@
     flex-direction: row;
     padding: 0 70px;
     justify-content: space-between;
-    margin: 0 auto 0;
+    margin: 0 auto;
     min-height: 74px;
+    max-width: 1140px;
+}
+
+.header-main {
+    background-color: #D3A5F8;
 }
 
 .header__logo {
@@ -25,6 +30,50 @@
     margin: 0;
     list-style-type: none;
 
+}
+
+.header__main-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 21px 0;
+}
+
+.header__reg-link {
+    text-decoration: none;
+    color: #000;
+    text-align: right;
+    font-size: 12px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    margin: 29px 30px 29px 0;
+}
+
+.header__log-container {
+    width: 76px;
+    height: 32px;
+    background-color: #000;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.header__log-link {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 12px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
 }
 
 .header__nav-link {
@@ -80,9 +129,10 @@
     display: none
 }
 
-@media screen and (min-width: 320px) and (max-width: 900px) {
+@media screen and (min-width: 551px) and (max-width: 900px) {
     .header {
-        padding: 0 auto;
+        padding: 0 30px;
+        max-width: 708px;
     }
 
     .header__nav {
@@ -98,12 +148,31 @@
         width: 44px;
         height: 44px;
         margin: 15px 0 15px auto;
+        cursor: pointer;
         background-image: url(../../images/header_hiden-icon.svg);
     }
 }
 
-@media screen and (max-width: 349px) {
+@media screen and (max-width: 550px) {
     .header {
         padding: 0 14px;
+    }
+
+    .header__main-nav {
+        margin: 29px 0;
+    }
+
+    .header__reg-link {
+        font-size: 10px;
+        margin-right: 14px;
+    }
+
+    .header__log-container {
+        width: 54px;
+        height: 26px;
+    }
+
+    .header__log-link {
+        font-size: 10px;
     }
 }

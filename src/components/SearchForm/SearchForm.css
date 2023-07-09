@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     padding: 70px 70px 49px;
+    margin: 0 auto;
+    max-width: 1140px;
 }
 
 .search__form {
@@ -103,7 +105,7 @@
     line-height: 18px;
 }
 
-@media screen and (max-width: 349px) {
+@media screen and (max-width: 490px) {
     .search {
         padding: 92px 14px 43px;
     }
@@ -123,4 +125,11 @@
         font-size: 11px;
     }
 
+}
+
+@media screen and (min-width: 490px) and (max-width: 900px) {
+    .search {
+        max-width: 708px;
+        padding: 80px 30px 62px;
+    }
 }

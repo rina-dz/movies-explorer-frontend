@@ -65,7 +65,7 @@
     border: none;
     border-bottom: 1px solid #E8E8E8;
     padding: 0;
-    margin-bottom: 6px;
+    margin-bottom: 16px;
 }
 
 .login__input:invalid {
@@ -100,7 +100,8 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin-top: 126px;
+    margin-top: 197px;
+    padding: 0;
     border: none;
     cursor: pointer;
 }
@@ -138,7 +139,14 @@
     margin: 0;
 }
 
-@media screen and (max-width: 349px) {
+@media screen and (min-width: 550px) and (max-width: 900px) {
+
+    .login__button {
+        margin-top: 231px;
+    }
+}
+
+@media screen and (max-width: 550px) {
 
     .login__container {
         display: flex;

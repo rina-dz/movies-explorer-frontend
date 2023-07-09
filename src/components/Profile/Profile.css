@@ -21,7 +21,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 123px auto 220px;
+    margin: 123px auto 187px;
 }
 
 .profile__input-container {
@@ -99,9 +99,9 @@
     margin: 0;
 }
 
-@media screen and (max-width: 349px) {
+@media screen and (max-width: 550px) {
     .profile__form {
-        margin: 80px auto 379px;
+        margin: 80px auto 346px;
     }
 
     .profile__input-container {
@@ -116,4 +116,16 @@
     .profile__input {
         width: 50%;
     }
+}
+
+@media screen and (min-width: 550px) and (max-width: 900px) {
+    .profile__title {
+        margin-top: 236px;
+    }
+
+    .profile__form {
+        margin-top: 72px;
+        margin-bottom: 210px;
+    }
+
 }

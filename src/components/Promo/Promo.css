@@ -1,68 +1,7 @@
 .promo {
     background-color: #D3A5F8;
-}
-
-.promo__header {
-    display: flex;
-    flex-direction: row;
-    padding: 0 70px;
-    justify-content: space-between;
-    margin: 0 auto 0;
-    min-height: 74px;
-}
-
-.promo__logo {
-    height: 38px;
-    width: 38px;
-    margin: 18px 0;
-    background-image: url('../../images/header_logo.svg');
-    background-size: cover;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.promo__nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
-    margin: 21px 0;
-}
-
-.promo__reg-link {
-    text-decoration: none;
-    color: #000;
-    text-align: right;
-    font-size: 12px;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px;
-    text-align: center;
-    margin: 29px 30px 29px 0;
-}
-
-.promo__log-container {
-    width: 76px;
-    height: 32px;
-    background-color: #000;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-}
-
-.promo__log-link {
-    text-decoration: none;
-    color: #FFF;
-    font-size: 12px;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .promo__main {
@@ -92,28 +31,6 @@
 }
 
 @media screen and (max-width: 450px) {
-    .promo__header {
-        padding: 0 14px;
-    }
-
-    .promo__nav {
-        margin: 29px 0;
-    }
-
-    .promo__reg-link {
-        font-size: 10px;
-        margin-right: 14px;
-    }
-
-    .promo__log-container {
-        width: 54px;
-        height: 26px;
-    }
-
-    .promo__log-link {
-        font-size: 10px;
-    }
-
     .promo__main {
         min-height: 570px;
     }
@@ -130,5 +47,11 @@
         position: absolute;
         width: 248.005px;
         height: 248.004px;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 900px) {
+    .promo__title {
+        margin: 346px 19px 342px;
     }
 }

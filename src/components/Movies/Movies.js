@@ -9,7 +9,7 @@ function Movies(props) {
 
     return (
         <>
-            <Header openNavTabMenu={props.openNavTabMenu} />
+            <Header openNavTabMenu={props.openNavTabMenu} mainHeader={false} />
             <SearchForm />
             <MoviesCardList>
                 <>

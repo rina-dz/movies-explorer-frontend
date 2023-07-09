@@ -1,5 +1,7 @@
 .aboutme {
     padding: 110px 70px 0;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 .aboutme__title-container {
@@ -17,6 +19,8 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.88px;
+    margin-top: 0;
+    margin-bottom: 23px;
 }
 
 .aboutme__article {
@@ -96,9 +100,10 @@
     display: none;
 }
 
-@media screen and (min-width: 651) and (max-width: 900px) {
+@media screen and (min-width: 651px) and (max-width: 900px) {
     .aboutme {
-        padding: 110px 50px 0;
+        max-width: 668px;
+        padding: 90px 50px 0;
     }
 
     .aboutme__article-img {
@@ -109,6 +114,7 @@
         font-size: 12px;
         line-height: 18px;
         max-width: 364px;
+        margin-bottom: 87px;
     }
 
     .aboutme__article-title {
@@ -134,6 +140,10 @@
 
     .aboutme__article {
         justify-content: center;
+    }
+
+    .aboutme__title {
+        margin-bottom: 28px;
     }
 
     .aboutme__text-container {
