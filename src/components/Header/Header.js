@@ -8,7 +8,7 @@ function Header(props) {
 
     function currentHeader() {
         return (
-            <header className="header">
+            <header className="header__container">
                 <Link className="header__logo link-button" to="/" />
                 <Navigation />
                 <Link className="header__profile link-button" to="/profile">
@@ -25,21 +25,23 @@ function Header(props) {
     function mainHeader() {
         return (
             <header className="header header-main">
-                <Link className="header__logo link-button" to="/" />
-                <ul className="header__main-nav">
-                    <li>
-                        <Link className="header__reg-link link-button" to="/signup">
-                            Регистрация
-                        </Link>
-                    </li>
-                    <li>
-                        <div className="header__log-container">
-                            <Link className="header__log-link link-button" to="/signin">
-                                Войти
+                <div className='header__container'>
+                    <Link className="header__logo link-button" to="/" />
+                    <ul className="header__main-nav">
+                        <li>
+                            <Link className="header__reg-link link-button" to="/signup">
+                                Регистрация
                             </Link>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                        <li>
+                            <div className="header__log-container">
+                                <Link className="header__log-link link-button" to="/signin">
+                                    Войти
+                                </Link>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </header>
         )
     }

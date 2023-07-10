@@ -13,12 +13,14 @@ function Main() {
     return (
         <>
             <Header mainHeader={true} />
+            <main>
             <Promo />
             <NavTab />
             <AboutProject />
             <Techs />
             <AboutMe />
             <Portfolio />
+            </main>
             <Footer />
         </>
     )

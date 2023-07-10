@@ -37,7 +37,7 @@
     border: none;
 }
 
-@media screen and (min-width: 760px) and (max-width: 1279px) {
+@media screen and (max-width: 1279px) {
     .movies {
         max-width: 100%;
         padding: 70px 30px 80px;
@@ -48,7 +48,7 @@
     }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-device-width: 767px) {
     .movies {
         max-width: 100%;
         padding: 40px 10px 80px;

@@ -25,6 +25,7 @@
 
 .link-button {
   transition: opacity 0.5s;
+  cursor: pointer;
 }
 
 .link-button:hover {
