@@ -12,7 +12,6 @@ function NotFound() {
             </div>
             <Link className="not-found__link link-button" to="/">Назад</Link>
         </section>
-
     )
 }
 

@@ -11,14 +11,14 @@ function SavedMovies(props) {
         <>
             <Header openNavTabMenu={props.openNavTabMenu} mainHeader={false} />
             <main>
-            <SearchForm />
-            <MoviesCardList>
-                <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
-                <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
-                <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
-                <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
-                <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
-            </MoviesCardList>
+                <SearchForm />
+                <MoviesCardList>
+                    <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
+                    <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
+                    <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
+                    <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
+                    <MoviesCard icon={<button className="movie__icon-delete link-button"></button>} />
+                </MoviesCardList>
             </main>
             <Footer />
         </>

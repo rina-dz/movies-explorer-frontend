@@ -14,12 +14,12 @@ function Main() {
         <>
             <Header mainHeader={true} />
             <main>
-            <Promo />
-            <NavTab />
-            <AboutProject />
-            <Techs />
-            <AboutMe />
-            <Portfolio />
+                <Promo />
+                <NavTab />
+                <AboutProject />
+                <Techs />
+                <AboutMe />
+                <Portfolio />
             </main>
             <Footer />
         </>
