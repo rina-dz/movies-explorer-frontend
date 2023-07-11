@@ -5,14 +5,14 @@ import "./MoviesCardList.css";
 function MoviesCardList(props) {
 
     return (
-        <>
-            <section className="movies">
+        <section className="movies">
+            <div className="movies__container">
                 {props.children}
-            </section>
-            <section className="movies__container">
-                <button className="movies__button link-button">Ещё</button>
-            </section>
-        </>
+            </div>
+            <div className="movies__more">
+                <button className="movies__more-button link-button">Ещё</button>
+            </div>
+        </section>
     )
 }
 

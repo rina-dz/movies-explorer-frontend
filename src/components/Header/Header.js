@@ -8,16 +8,18 @@ function Header(props) {
 
     function currentHeader() {
         return (
-            <header className="header__container">
-                <Link className="header__logo link-button" to="/" />
-                <Navigation />
-                <Link className="header__profile link-button" to="/profile">
-                    <p className="header__profile-title">Аккаунт</p>
-                    <div className="header__profile-container">
-                        <img className="header__profile-icon" src={profile_icon} alt="Иконка профиля" />
-                    </div>
-                </Link>
-                <div className='header__hiden-icon link-button' onClick={props.openNavTabMenu}></div>
+            <header className="header">
+                <div className='header__container'>
+                    <Link className="header__logo link-button" to="/" />
+                    <Navigation />
+                    <Link className="header__profile link-button" to="/profile">
+                        <p className="header__profile-title">Аккаунт</p>
+                        <div className="header__profile-container">
+                            <img className="header__profile-icon" src={profile_icon} alt="Иконка профиля" />
+                        </div>
+                    </Link>
+                    <div className='header__hiden-icon link-button' onClick={props.openNavTabMenu}></div>
+                </div>
             </header>
         )
     }

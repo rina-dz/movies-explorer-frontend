@@ -1,4 +1,4 @@
-.movies {
+.movies__container {
     padding: 70px 70px 30px;
     display: grid;
     grid-template-columns: repeat(3, min-content);
@@ -10,7 +10,7 @@
     max-width: 1140px;
 }
 
-.movies__container {
+.movies__more {
     width: 100%;
     margin: 0 auto;
     max-width: 1140px;
@@ -20,7 +20,7 @@
     padding: 50px 0 80px;
 }
 
-.movies__button {
+.movies__more-button {
     cursor: pointer;
     margin: 0 auth 0;
     color: #000;
@@ -37,8 +37,8 @@
     border: none;
 }
 
-@media screen and (max-width: 1279px) {
-    .movies {
+@media screen and (max-device-width: 1279px) {
+    .movies__container {
         max-width: 100%;
         padding: 70px 30px 80px;
         grid-template-columns: repeat(2, min-content);
@@ -49,9 +49,9 @@
 }
 
 @media screen and (max-device-width: 767px) {
-    .movies {
+    .movies__container {
         max-width: 100%;
-        padding: 40px 10px 80px;
+        padding: 40px 0 80px;
         grid-template-columns: repeat(1, min-content);
         grid-auto-rows: min-content;
         row-gap: 30px;

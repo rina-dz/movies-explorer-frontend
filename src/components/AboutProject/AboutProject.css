@@ -136,7 +136,7 @@
     margin: 0;
 }
 
-@media screen and (min-width: 700px) and (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .project {
         padding: 90px 50px;
     }
@@ -164,9 +164,9 @@
 
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 699px) {
     .project {
-        padding: 70px 18px;
+        padding: 70px 50px;
     }
 
     .project__title-container {
@@ -229,4 +229,10 @@
         line-height: normal;
     }
 
+}
+
+@media screen and (max-width: 470px) {
+    .project {
+        padding: 70px 18px;
+    }
 }

@@ -100,7 +100,7 @@
     display: none;
 }
 
-@media screen and (min-width: 651px) and (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .aboutme {
         max-width: 668px;
         padding: 90px 50px 0;
@@ -133,9 +133,9 @@
     }
 }
 
-@media screen and (min-width: 319px) and (max-width: 650px) {
+@media screen and (max-width: 699px) {
     .aboutme {
-        padding: 70px 14px 0;
+        padding: 70px 50px 0;
     }
 
     .aboutme__article {
@@ -184,5 +184,11 @@
         line-height: 16px;
         width: 100%;
         margin: 0 0 20px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .aboutme {
+        padding: 70px 14px 0;
     }
 }
