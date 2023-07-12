@@ -1,0 +1,238 @@
+.project {
+    margin: 0 auto;
+    padding: 110px 70px;
+    background-color: #FFF;
+    max-width: 1140px;
+}
+
+.project__title-container {
+    width: 100%;
+    border-bottom: 1px solid #000000;
+    margin: 0 0 70px;
+    padding: 0;
+}
+
+.project__title {
+    color: #000;
+    font-size: 22px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.88px;
+    margin: 0 auto 23px;
+}
+
+.project__article-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 110px;
+}
+
+.project__article {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    margin-right: 40px;
+}
+
+.project__article:last-child {
+    margin-right: 0;
+}
+
+.project__article-title {
+    color: #000;
+    font-size: 20px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.8px;
+    margin: 0 auto 26px 0;
+}
+
+.project__article-text {
+    color: #000;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+}
+
+.project__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.project__frontend {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.project__frontend-button {
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    background-color: #000;
+    width: 100%;
+    height: 36px;
+    margin: 0 auto 14px;
+    padding: 0;
+}
+
+.project__frontend-text {
+    color: #A0A0A0;
+    text-align: center;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    margin: 0;
+}
+
+.project__backend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.project__backend-button {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 36px;
+    margin: 0 auto 14px;
+    padding: 0;
+}
+
+.project__backend-text {
+    color: #A0A0A0;
+    text-align: center;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .project {
+        padding: 90px 50px;
+    }
+
+    .project__article-title {
+        margin: 0 auto 22px 0;
+    }
+
+    .project__article-text {
+        font-size: 12px;
+        line-height: 18px;
+        margin: 0;
+    }
+
+    .project__article {
+        display: flex;
+        flex-direction: column;
+        max-width: 319px;
+        margin-right: 30px;
+    }
+
+    .project__article:last-child {
+        margin-right: 0;
+    }
+
+}
+
+@media screen and (max-width: 699px) {
+    .project {
+        padding: 70px 50px;
+    }
+
+    .project__title-container {
+        margin-bottom: 60px;
+    }
+
+    .project__article-container {
+        flex-direction: column;
+        margin-bottom: 4px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project__article {
+        display: flex;
+        flex-direction: column;
+        width: 284px;
+        margin: 0;
+    }
+
+    .project__article-title {
+        font-size: 18px;
+        line-height: normal;
+        letter-spacing: -0.72px;
+        margin: 0 auto 16px;
+    }
+
+    .project__article-text {
+        font-size: 11px;
+        font-style: normal;
+        line-height: 16px;
+        margin: 0 0 56px;
+    }
+
+    .project__frontend {
+        width: 35%;
+    }
+
+    .project__frontend-text {
+        font-size: 11px;
+        line-height: normal;
+    }
+
+    .project__frontend-button {
+        font-size: 11px;
+        line-height: normal;
+    }
+
+    .project__backend {
+        width: 65%;
+    }
+
+    .project__backend-text {
+        font-size: 11px;
+        line-height: normal;
+    }
+
+    .project__backend-button {
+        font-size: 11px;
+        line-height: normal;
+    }
+
+}
+
+@media screen and (max-width: 470px) {
+    .project {
+        padding: 70px 18px;
+    }
+}
