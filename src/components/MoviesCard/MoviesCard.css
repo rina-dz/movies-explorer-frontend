@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.movie__link {
+    text-decoration: none;
+}
+
 .movie__container {
     margin: 0;
     display: flex;
@@ -23,6 +27,11 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    max-height: 18px;
+    max-width: 280px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .movie__duration {
@@ -72,6 +81,9 @@
     margin: 0;
     width: 364px;
     height: 203px;
+    background-size: cover;
+    object-fit: cover;
+    margin-bottom: 0;
 }
 
 @media screen and (max-width: 900px) {
@@ -83,6 +95,10 @@
         width: 339px;
         height: 190px;
     }
+
+    .movie__title {
+        max-width: 250px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -93,5 +109,9 @@
     .movie__image {
         width: 300px;
         height: 168px;
+    }
+
+    .movie__title {
+        max-width: 210px;
     }
 }

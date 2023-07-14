@@ -25,27 +25,45 @@ function Header(props) {
     }
 
     function mainHeader() {
-        return (
-            <header className="header header-main">
-                <div className='header__container'>
-                    <Link className="header__logo link-button" to="/" />
-                    <ul className="header__main-nav">
-                        <li>
-                            <Link className="header__reg-link link-button" to="/signup">
-                                Регистрация
-                            </Link>
-                        </li>
-                        <li>
-                            <div className="header__log-container">
-                                <Link className="header__log-link link-button" to="/signin">
-                                    Войти
-                                </Link>
+        if (props.isLoggedIn) {
+            return (
+                <header className="header header-main">
+                    <div className='header__container'>
+                        <Link className="header__logo link-button" to="/" />
+                        <Navigation />
+                        <Link className="header__profile link-button" to="/profile">
+                            <p className="header__profile-title">Аккаунт</p>
+                            <div className="header__profile-container">
+                                <img className="header__profile-icon" src={profile_icon} alt="Иконка профиля" />
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            </header>
-        )
+                        </Link>
+                        <div className='header__hiden-icon link-button' onClick={props.openNavTabMenu}></div>
+                    </div>
+                </header>
+            )
+        } else {
+            return (
+                <header className="header header-main">
+                    <div className='header__container'>
+                        <Link className="header__logo link-button" to="/" />
+                        <ul className="header__main-nav">
+                            <li>
+                                <Link className="header__reg-link link-button" to="/signup">
+                                    Регистрация
+                                </Link>
+                            </li>
+                            <li>
+                                <div className="header__log-container">
+                                    <Link className="header__log-link link-button" to="/signin">
+                                        Войти
+                                    </Link>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+            )
+        };
     }
 
     return (

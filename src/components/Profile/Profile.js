@@ -9,20 +9,20 @@ function Profile(props) {
         <>
             <Header openNavTabMenu={props.openNavTabMenu} mainHeader={false} />
             <section className="profile">
-                <p className="profile__title">Привет, Арина!</p>
-                <form className="profile__form">
-                    <div className="profile__input-container">
-                        <label className="profile__label">Имя</label>
-                        <input className="profile__input" placeholder="Арина" minLength={2} />
+                <p className="profile__title">Привет, {props.userName}!</p>
+                <div className="profile__container">
+                    <div className="profile__text-container">
+                        <p className="profile__label">Имя</p>
+                        <p className="profile__value">{props.userName}</p>
                     </div>
-                    <div className="profile__input-container">
-                        <label className="profile__label">E-mail</label>
-                        <input className="profile__input" placeholder="pochta@yandex.ru" type='email' minLength={2} />
+                    <div className="profile__text-container">
+                        <p className="profile__label">E-mail</p>
+                        <p className="profile__value">{props.userEmail}</p>
                     </div>
-                </form>
+                </div>
                 <div className="profile__links">
-                    <Link className="profile__change-link link-button" to="/">Редактировать</Link>
-                    <Link className="profile__exit-link link-button" to="/">Выйти из аккаунта</Link>
+                    <Link className="profile__change-link link-button" to="/profile-change">Редактировать</Link>
+                    <Link className="profile__exit-link link-button" onClick={props.signOut}>Выйти из аккаунта</Link>
                 </div>
             </section>
         </>

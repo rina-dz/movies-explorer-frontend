@@ -1,0 +1,102 @@
+.info-tooltip {
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.4s, opacity 0.4s;
+}
+
+.info-tooltip_opened {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-tooltip__container {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    max-width: 430px;
+    z-index: 11;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+.info-tooltip__title {
+    color: #000000;
+    width: 358px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29.05px;
+    margin: 32px auto 60px;
+    text-align: center;
+}
+
+.info-tooltip__icon-unsuccessful {
+    background-image: url(../../images/registration_unsuccessful.svg);
+    background-size: cover;
+    background-color: transparent;
+    width: 120px;
+    height: 120px;
+    margin: 50px auto 0;
+}
+
+.info-tooltip__icon-successful {
+    background-image: url(../../images/registration_successful.svg);
+    background-size: cover;
+    background-color: transparent;
+    width: 120px;
+    height: 120px;
+    margin: 50px auto 0;
+}
+
+.info-tooltip__close-icon {
+    background-image: url(../../images/close_icon.svg);
+    background-size: cover;
+    background-color: transparent;
+    position: absolute;
+    top: -28px;
+    right: -28px;
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.5s;
+    padding: 0;
+    border: 0;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 900px) {
+    .info-tooltip__container {
+        max-width: 282px;
+    }
+
+    .info-tooltip__title {
+        font-size: 20px;
+        width: 244px;
+        line-height: 24.2px;
+        margin: 40px auto 50px;
+    }
+
+    .info-tooltip__icon-unsuccessful {
+        margin: 60px auto 0;
+    }
+
+    .info-tooltip__icon-successful {
+        margin: 60px auto 0;
+    }
+
+    .info-tooltip__close-icon {
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+        top: -36px;
+        right: 0;
+    }
+}
