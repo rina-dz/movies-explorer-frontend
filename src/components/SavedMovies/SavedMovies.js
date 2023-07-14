@@ -7,10 +7,37 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 function SavedMovies(props) {
+    
+    const movies = props.movies;
+    const [visibleMovies, addMorevisibleMovies] = React.useState([]);
 
-    const [anyMoreMovies, setMoreMovies] = React.useState(true);
+    React.useEffect(() => {
+        checkAndResize();
+    }, [props.deviceWidth]);
 
-    //props.movies.length === visibleMovies ? setMoreMovies(false) : setMoreMovies(true)
+    function checkAndResize() {
+        if (props.deviceWidth >= 1280) {
+            addMorevisibleMovies(movies.slice(0, 12));
+        }
+        if (props.deviceWidth < 1280 && props.deviceWidth > 480) {
+            addMorevisibleMovies(movies.slice(0, 8));
+        }
+        if (props.deviceWidth <= 480 && props.deviceWidth > 319) {
+            addMorevisibleMovies(movies.slice(0, 5));
+        }
+    };
+
+    function addMoreMovies() {
+        if (props.deviceWidth >= 1280) {
+            addMorevisibleMovies(movies.slice(0, visibleMovies.length + 3));
+        }
+        if (props.deviceWidth < 1280 && props.deviceWidth > 480) {
+            addMorevisibleMovies(movies.slice(0, visibleMovies.length + 2));
+        }
+        if (props.deviceWidth <= 480 && props.deviceWidth > 319) {
+            addMorevisibleMovies(movies.slice(0, visibleMovies.length + 2));
+        }
+    }
 
     return (
         <>
@@ -18,7 +45,7 @@ function SavedMovies(props) {
             <main>
                 <SearchForm movieSearch={props.movieSearch} keyWords={props.keyWords} checkboxState={props.checkboxState} />
                 {props.movies.length > 0 ? (
-                    <MoviesCardList anyMoreMovies={anyMoreMovies}>
+                    <MoviesCardList anyMoreMovies={movies.length === visibleMovies.length ? false : true}>
                         {props.movies.map((el) => (
                             <MoviesCard movie={el} key={el._id} image={el.image.url} nameRU={el.nameRU} duration={el.duration} isSaved={'saved-movies'}
                                 trailerLink={el.trailerLink} handleMovieDelete={props.handleMovieDelete} handleMovieSave={props.handleMovieSave} />

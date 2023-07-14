@@ -10,7 +10,7 @@ function MoviesCardList(props) {
             </div>
             {props.anyMoreMovies ? (
             <div className="movies__more">
-                <button className="movies__more-button link-button">Ещё</button>
+                <button className="movies__more-button link-button" onClick={props.moreMovies}>Ещё</button>
             </div>
             ) : (<></>)}
         </section>

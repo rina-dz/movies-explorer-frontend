@@ -29,7 +29,7 @@ function App() {
   const [isOperationSuccessful, setOperationSuccessful] = React.useState(false);
   const [movies, addMovies] = React.useState([]);
   const [savedMovies, addSavedMovies] = React.useState([]);
-  // const [deviceWidth, setNewdeviceWidth] = React.useState(window.innerWidth);
+  const [deviceWidth, setNewdeviceWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
     Promise.all([newMainApi.getUserInfo(), newMainApi.getSavedMovies()])
@@ -212,6 +212,7 @@ function App() {
             isSaved={isMovieSaved}
             movieSearch={handleSearchMovies}
             movies={movies}
+            deviceWidth={deviceWidth}
           />} />
           <Route path="/saved-movies" element={<ProtectedRoute
             loggedIn={loggedIn}
@@ -220,6 +221,7 @@ function App() {
             handleMovieDelete={handleMovieDelete}
             movieSearch={handleSearchSavedMovies}
             movies={savedMovies}
+            deviceWidth={deviceWidth}
           />} />
           <Route path="/profile" element={<ProtectedRoute
             loggedIn={loggedIn}
