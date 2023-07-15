@@ -53,7 +53,7 @@ class authApi {
 }
 
 const newAuthApi = new authApi({
-    baseUrl: 'https://api.movies-explorer.rindz.nomoreparties.sbs'
+    baseUrl: 'http://api.movies-explorer.rindz.nomoreparties.sbs'
 })
 
 export { newAuthApi };

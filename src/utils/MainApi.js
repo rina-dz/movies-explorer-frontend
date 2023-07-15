@@ -100,7 +100,7 @@ class MainApi {
 };
 
 const newMainApi = new MainApi({
-    baseUrl: 'https://api.movies-explorer.rindz.nomoreparties.sbs/'
+    baseUrl: 'http://api.movies-explorer.rindz.nomoreparties.sbs/'
 })
 
 export { newMainApi };
