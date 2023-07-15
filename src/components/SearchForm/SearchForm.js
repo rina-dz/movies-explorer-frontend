@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./SearchForm.css";
 import search_icon from '../../images/search_icon.svg';
 
 function SearchForm(props) {
-    const [isCheckboxChecked, setCheckboxChecked] = React.useState(props.checkboxState);
-    const [nameValue, setNameValue] = useState(props.keyWords);
-
-    React.useEffect(() => {
-        setCheckboxChecked(JSON.parse(localStorage.checkboxState));
-        setNameValue(localStorage.keyWords);
-    }, []);
+    const [isCheckboxChecked, setCheckboxChecked] = React.useState(JSON.parse(localStorage.checkboxState));
+    const [nameValue, setNameValue] = React.useState(localStorage.keyWords);
 
     function handleNameChange(e) {
         setNameValue(e.target.value);
@@ -37,8 +32,8 @@ function SearchForm(props) {
                     <button className="search__line-button link-button">Найти</button>
                 </div>
                 <div className="search__checkbox-container">
-                    <input className="search__checkbox-input" type="checkbox" name="shortcut__checkbox" onChange={handleCheckboxChange} checked={isCheckboxChecked} />
-                    <label className="search__checkbox-label" for="shortcut__checkbox">
+                    <input className="search__checkbox-input" type="checkbox" name="shortcut__checkbox" id='shortcut__checkbox' onChange={handleCheckboxChange} checked={isCheckboxChecked}/>
+                    <label className="search__checkbox-label" htmlFor="shortcut__checkbox">
                         Короткометражки</label>
                 </div>
             </form>

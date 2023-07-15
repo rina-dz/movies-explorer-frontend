@@ -6,7 +6,7 @@ import "./Register.css";
 function Register(props) {
 
     const { values, handleChange, handleSubmit, errors, isValid } = useFormWithValidation(props.handleSubmit);
-
+    
     return (
         <section className="register">
             <div className="register__container">
@@ -25,7 +25,7 @@ function Register(props) {
                     <input className="register__input" placeholder="Пароль" type="password" name="password" 
                     value={values?.password} onChange={handleChange} minLength={5} required />
                     <span className="register__input-error">{errors?.password}</span>
-                    <button 
+                    <button type='submit'
                     className={isValid ? `register__button register__button-enable link-button` : 'register__button register__button-disable'}>Зарегистрироваться</button>
                 </form>
                 <div className="register__links">

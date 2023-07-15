@@ -21,7 +21,7 @@ function ProfileForm(props) {
                         <label className="profile-form__label">E-mail</label>
                         <input className="profile-form__input" placeholder={props.userEmail} type='email' name="email" value={values?.email} onChange={handleChange} minLength={2} required />
                         <span className="profile-form__input-error">{errors?.email}</span>
-                        <button className={isValid ? `profile-form__button profile-form__button-enable link-button` : 'profile-form__button profile-form__button-disable'}>Редактировать</button>
+                        <button className={isValid ? `profile-form__button profile-form__button-enable link-button` : 'profile-form__button profile-form__button-disable'} type='submit'>Редактировать</button>
                     </form>
                     <div className="profile-form__links">
                         <Link className="profile-form__link link-button" to="/profile">Вернуться к профилю</Link>

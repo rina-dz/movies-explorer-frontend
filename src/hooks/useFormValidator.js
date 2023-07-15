@@ -30,7 +30,7 @@ export default function useFormWithValidation(callBack) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     if (values.name && values.email && values.password) {
       callBack({name: values.name, email: values.email, password: values.password})
     } else {

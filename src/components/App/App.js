@@ -29,7 +29,6 @@ function App() {
   const [isOperationSuccessful, setOperationSuccessful] = React.useState(false);
   const [movies, addMovies] = React.useState([]);
   const [savedMovies, addSavedMovies] = React.useState([]);
-  const [deviceWidth, setNewdeviceWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
     Promise.all([newMainApi.getUserInfo(), newMainApi.getSavedMovies()])
@@ -89,6 +88,8 @@ function App() {
         if (data.token) {
           localStorage.setItem('token', data.token);
         }
+        localStorage.setItem('checkboxState', false);
+        localStorage.setItem('keyWords', '');
         changeState(true);
         setOperationSuccessful(true);
         navigate('/movies', { replace: true });
@@ -120,8 +121,7 @@ function App() {
       })
   }
 
-  function handleSearchMovies(keyWords, checkboxState) {
-    setLoading(true);
+  function handleSearchMovies(keyWords, checkboxState, reloadMovies) {
     newMoviesApi.getInitialMovies()
       .then((resMovies) => {
         let moviesData = resMovies.filter(film => film.nameRU.toLowerCase().includes(keyWords.toLowerCase()));
@@ -135,6 +135,7 @@ function App() {
         }
         localStorage.setItem('keyWords', keyWords);
         localStorage.setItem('checkboxState', checkboxState);
+        reloadMovies();
       })
       .catch((err) => {
         console.log(err);
@@ -144,11 +145,12 @@ function App() {
       })
   }
 
-  function handleSearchSavedMovies(keyWords, checkboxState) {
+  function handleSearchSavedMovies(keyWords, checkboxState, reloadMovies) {
     setLoading(true);
     newMainApi.getSavedMovies()
       .then((resMovies) => {
-        let moviesData = resMovies.filter(film => film.nameRu.includes(keyWords.toLowerCase()));
+        const moviesArray = resMovies.data;
+        let moviesData = moviesArray.filter(film => film.nameRU.includes(keyWords.toLowerCase()));
         if (checkboxState) {
           let shortCuts = moviesData.filter(film => film.duration <= 40);
           localStorage.setItem('searchedMovies', JSON.stringify(shortCuts));
@@ -159,6 +161,7 @@ function App() {
         }
         localStorage.setItem('keyWords', keyWords);
         localStorage.setItem('checkboxState', checkboxState);
+        reloadMovies();
       })
       .catch((err) => {
         console.log(err);
@@ -212,7 +215,6 @@ function App() {
             isSaved={isMovieSaved}
             movieSearch={handleSearchMovies}
             movies={movies}
-            deviceWidth={deviceWidth}
           />} />
           <Route path="/saved-movies" element={<ProtectedRoute
             loggedIn={loggedIn}
@@ -221,7 +223,6 @@ function App() {
             handleMovieDelete={handleMovieDelete}
             movieSearch={handleSearchSavedMovies}
             movies={savedMovies}
-            deviceWidth={deviceWidth}
           />} />
           <Route path="/profile" element={<ProtectedRoute
             loggedIn={loggedIn}
