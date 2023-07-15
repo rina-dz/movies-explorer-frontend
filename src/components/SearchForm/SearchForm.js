@@ -28,7 +28,7 @@ function SearchForm(props) {
                         src={search_icon}
                         alt="Иконка поиска"
                     />
-                    <input className="search__line-input" placeholder="Фильм" onChange={handleNameChange} value={nameValue} />
+                    <input className="search__line-input" placeholder="Фильм" onChange={handleNameChange} value={nameValue || ""} />
                     <button className="search__line-button link-button">Найти</button>
                 </div>
                 <div className="search__checkbox-container">
