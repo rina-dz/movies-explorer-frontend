@@ -159,10 +159,8 @@ function App() {
         if (checkboxState) {
           let shortCuts = moviesData.filter(film => film.duration <= 40);
           localStorage.setItem('savedMovies', JSON.stringify(shortCuts));
-          // addSavedMovies(shortCuts);
         } else {
           localStorage.setItem('savedMovies', JSON.stringify(moviesData));
-          // addSavedMovies(moviesData);
         }
         reloadMovies();
       })
@@ -188,8 +186,7 @@ function App() {
 
   function handleMovieDelete(movie, reloadMovies) {
     setLoading(true);
-    const deleteMovie = savedMovies.find(film => film.movieId === (movie.id) && film.owner === currentUser._id);
-    if (!deleteMovie) {
+    if (movie._id) {
       return newMainApi.removeMovie(movie._id)
         .then(() => {
           const movies = savedMovies.filter(film => film._id !== movie._id)
@@ -203,6 +200,24 @@ function App() {
         .finally(() => {
           setLoading(false);
         })
+    } else {
+      const deleteMovie = savedMovies.find(film => film.movieId === (movie.id) && film.owner === currentUser._id);
+      if (deleteMovie) {
+        return newMainApi.removeMovie(deleteMovie._id)
+          .then(() => {
+            const movies = savedMovies.filter(film => film._id !== deleteMovie._id)
+            addSavedMovies(movies);
+            localStorage.setItem('savedMovies', JSON.stringify(movies));
+            reloadMovies();
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+          .finally(() => {
+            setLoading(false);
+          })
+      }
+
     }
   }
 

@@ -59,7 +59,7 @@ function SavedMovies(props) {
                 {JSON.parse(localStorage.savedMovies).length > 0 ? (
                     <MoviesCardList anyMoreMovies={JSON.parse(localStorage.savedMovies).length === visibleMovies.length ? false : true} moreMovies={addMoreMovies}>
                         {visibleMovies.map((el) => (
-                            <MoviesCard movie={el} key={el.id} image={el.image.url} nameRU={el.nameRU} duration={el.duration} isSaved={'saved-movies'}
+                            <MoviesCard movie={el} key={el.movieId} image={el.image.url} nameRU={el.nameRU} duration={el.duration} isSaved={'saved-movies'}
                                 trailerLink={el.trailerLink} handleMovieDelete={movieDelete} handleMovieSave={props.handleMovieSave} />
                         ))}
                     </MoviesCardList>
