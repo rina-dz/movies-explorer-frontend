@@ -56,6 +56,9 @@ function App() {
 
   function signOut() {
     localStorage.removeItem('token');
+    localStorage.removeItem('searchedMovies');
+    localStorage.removeItem('checkboxState');
+    localStorage.removeItem('keyWords');
     changeState(false);
     navigate('/signin', { replace: true });
   }
@@ -88,6 +91,7 @@ function App() {
         if (data.token) {
           localStorage.setItem('token', data.token);
         }
+        localStorage.setItem('searchedMovies', JSON.stringify(movies));
         localStorage.setItem('checkboxState', false);
         localStorage.setItem('keyWords', '');
         changeState(true);
@@ -122,16 +126,15 @@ function App() {
   }
 
   function handleSearchMovies(keyWords, checkboxState, reloadMovies) {
+    setLoading(true);
     newMoviesApi.getInitialMovies()
       .then((resMovies) => {
         let moviesData = resMovies.filter(film => film.nameRU.toLowerCase().includes(keyWords.toLowerCase()));
         if (checkboxState) {
           let shortCuts = moviesData.filter(film => film.duration <= 40);
           localStorage.setItem('searchedMovies', JSON.stringify(shortCuts));
-          addMovies(shortCuts);
         } else {
           localStorage.setItem('searchedMovies', JSON.stringify(moviesData));
-          addMovies(moviesData);
         }
         localStorage.setItem('keyWords', keyWords);
         localStorage.setItem('checkboxState', checkboxState);
@@ -153,14 +156,10 @@ function App() {
         let moviesData = moviesArray.filter(film => film.nameRU.includes(keyWords.toLowerCase()));
         if (checkboxState) {
           let shortCuts = moviesData.filter(film => film.duration <= 40);
-          localStorage.setItem('searchedMovies', JSON.stringify(shortCuts));
           addSavedMovies(shortCuts);
         } else {
-          localStorage.setItem('searchedMovies', JSON.stringify(moviesData));
           addSavedMovies(moviesData);
         }
-        localStorage.setItem('keyWords', keyWords);
-        localStorage.setItem('checkboxState', checkboxState);
         reloadMovies();
       })
       .catch((err) => {
@@ -214,7 +213,7 @@ function App() {
             handleMovieSave={handleMovieSave}
             isSaved={isMovieSaved}
             movieSearch={handleSearchMovies}
-            movies={movies}
+            movies={JSON.parse(localStorage.searchedMovies)}
           />} />
           <Route path="/saved-movies" element={<ProtectedRoute
             loggedIn={loggedIn}

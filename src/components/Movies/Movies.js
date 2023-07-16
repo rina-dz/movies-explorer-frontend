@@ -18,26 +18,28 @@ function Movies(props) {
     }, []);
 
     function checkAndResize() {
+       let movies = JSON.parse(localStorage.searchedMovies);
         if (window.innerWidth >= 1280) {
-            addMorevisibleMovies(props.movies.slice(0, 12));
+            addMorevisibleMovies(movies.slice(0, 12));
         }
         if (window.innerWidth < 1280 && window.innerWidth > 480) {
-            addMorevisibleMovies(props.movies.slice(0, 8));
+            addMorevisibleMovies(movies.slice(0, 8));
         }
         if (window.innerWidth <= 480 && window.innerWidth > 319) {
-            addMorevisibleMovies(props.movies.slice(0, 5));
+            addMorevisibleMovies(movies.slice(0, 5));
         }
     };
 
     function addMoreMovies() {
+       let movies = JSON.parse(localStorage.searchedMovies);
         if (window.innerWidth >= 1280) {
-            addMorevisibleMovies(props.movies.slice(0, visibleMovies.length + 3));
+            addMorevisibleMovies(movies.slice(0, visibleMovies.length + 3));
         }
         if (window.innerWidth < 1280 && window.innerWidth > 480) {
-            addMorevisibleMovies(props.movies.slice(0, visibleMovies.length + 2));
+            addMorevisibleMovies(movies.slice(0, visibleMovies.length + 2));
         }
         if (window.innerWidth <= 480 && window.innerWidth > 319) {
-            addMorevisibleMovies(props.movies.slice(0, visibleMovies.length + 2));
+            addMorevisibleMovies(movies.slice(0, visibleMovies.length + 2));
         }
     }
 
@@ -53,8 +55,9 @@ function Movies(props) {
                 {props.movies.length > 0 ? (
                     <MoviesCardList anyMoreMovies={props.movies.length === visibleMovies.length ? false : true} moreMovies={addMoreMovies}>
                         {visibleMovies.map((el) => (
-                            <MoviesCard movie={el} key={el.id} image={el.image.url} nameRU={el.nameRU} duration={el.duration} isSaved={props.isSaved}
-                                trailerLink={el.trailerLink} handleMovieDelete={props.handleMovieDelete} handleMovieSave={props.handleMovieSave} />
+                            <MoviesCard movie={el} key={el.id} image={el.image.url} nameRU={el.nameRU} duration={el.duration} 
+                            isSaved={props.isSaved} trailerLink={el.trailerLink} handleMovieDelete={props.handleMovieDelete} 
+                            handleMovieSave={props.handleMovieSave} />
                         ))}
                     </MoviesCardList>
                 ) : (
