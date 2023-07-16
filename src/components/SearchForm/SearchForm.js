@@ -3,9 +3,9 @@ import "./SearchForm.css";
 import search_icon from '../../images/search_icon.svg';
 
 function SearchForm(props) {
-    const [isCheckboxChecked, setCheckboxChecked] = React.useState(JSON.parse(localStorage.checkboxState));
-    const [nameValue, setNameValue] = React.useState(localStorage.keyWords);
-
+    const [isCheckboxChecked, setCheckboxChecked] = React.useState(props.checkbox);
+    const [nameValue, setNameValue] = React.useState(props.nameValue);
+    
     function handleNameChange(e) {
         setNameValue(e.target.value);
     }

@@ -49,7 +49,7 @@ function SavedMovies(props) {
         <>
             <Header openNavTabMenu={props.openNavTabMenu} mainHeader={false} />
             <main>
-                <SearchForm movieSearch={moviesSearching} />
+                <SearchForm movieSearch={moviesSearching} checkbox={false} nameValue={''} />
                 {props.movies.length > 0 ? (
                     <MoviesCardList anyMoreMovies={props.movies.length === visibleMovies.length ? false : true} moreMovies={addMoreMovies}>
                         {visibleMovies.map((el) => (

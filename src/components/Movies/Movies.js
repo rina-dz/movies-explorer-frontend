@@ -51,7 +51,7 @@ function Movies(props) {
         <>
             <Header openNavTabMenu={props.openNavTabMenu} mainHeader={false} />
             <main>
-                <SearchForm movieSearch={moviesSearching} />
+                <SearchForm movieSearch={moviesSearching} checkbox={JSON.parse(localStorage.checkboxState)} nameValue={localStorage.keyWords} />
                 {props.movies.length > 0 ? (
                     <MoviesCardList anyMoreMovies={props.movies.length === visibleMovies.length ? false : true} moreMovies={addMoreMovies}>
                         {visibleMovies.map((el) => (
