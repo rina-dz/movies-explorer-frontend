@@ -47,16 +47,20 @@ function Movies(props) {
         props.movieSearch(name, checkbox, checkAndResize);
     }
 
+    function movieDelete(movie) {
+        props.handleMovieDelete(movie, checkAndResize);
+    }
+
     return (
         <>
             <Header openNavTabMenu={props.openNavTabMenu} mainHeader={false} />
             <main>
                 <SearchForm movieSearch={moviesSearching} checkbox={JSON.parse(localStorage.checkboxState)} nameValue={localStorage.keyWords} />
-                {props.movies.length > 0 ? (
-                    <MoviesCardList anyMoreMovies={props.movies.length === visibleMovies.length ? false : true} moreMovies={addMoreMovies}>
+                {JSON.parse(localStorage.searchedMovies).length > 0 ? (
+                    <MoviesCardList anyMoreMovies={JSON.parse(localStorage.searchedMovies).length === visibleMovies.length ? false : true} moreMovies={addMoreMovies}>
                         {visibleMovies.map((el) => (
                             <MoviesCard movie={el} key={el.id} image={el.image.url} nameRU={el.nameRU} duration={el.duration} 
-                            isSaved={props.isSaved} trailerLink={el.trailerLink} handleMovieDelete={props.handleMovieDelete} 
+                            isSaved={props.isSaved} trailerLink={el.trailerLink} handleMovieDelete={movieDelete} 
                             handleMovieSave={props.handleMovieSave} />
                         ))}
                     </MoviesCardList>
