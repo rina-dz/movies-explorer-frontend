@@ -18,11 +18,13 @@ import InfoTooltip from '../InfoTooltip/InfoTooltip';
 import Preloader from '../Preloader/Preloader';
 import CurrentUserContext from '../../contexts/CurrentUserContext.js';
 
+// исправить валидацию email и navigate
+
 function App() {
 
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = React.useState({});
-  const [loggedIn, changeState] = React.useState(false);
+  const [loggedIn, changeState] = React.useState(localStorage.token ? true : false);
   const [isNavTabMenuOpen, setNavTabMenuOpen] = React.useState(false);
   const [isInfoTooltipOpen, setInfoTooltipOpen] = React.useState(false);
   const [isLoading, setLoading] = React.useState(false);
@@ -38,7 +40,6 @@ function App() {
         const info = { name: resInfo.name, email: resInfo.email, _id: resInfo._id };
         changeState(true);
         setCurrentUser(info);
-        navigate('/', { replace: true });
       })
       .catch((err) => {
         console.log(err);
@@ -57,6 +58,7 @@ function App() {
 
   function signOut() {
     localStorage.removeItem('token');
+    localStorage.removeItem('savedMovies');
     localStorage.removeItem('searchedMovies');
     localStorage.removeItem('checkboxState');
     localStorage.removeItem('keyWords');
@@ -115,7 +117,8 @@ function App() {
     newMainApi.changeUserInfo(info)
       .then(() => {
         setOperationSuccessful(true);
-        setCurrentUser({ name: currentUser.name, email: currentUser.email, _id: currentUser._id });
+        setCurrentUser({ name: info.name, email: info.email, _id: currentUser._id });
+        navigate('/profile', { replace: true });
       })
       .catch((err) => {
         setOperationSuccessful(false);
@@ -217,7 +220,6 @@ function App() {
             setLoading(false);
           })
       }
-
     }
   }
 

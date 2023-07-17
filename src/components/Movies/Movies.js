@@ -18,7 +18,7 @@ function Movies(props) {
     }, []);
 
     function checkAndResize() {
-       let movies = JSON.parse(localStorage.searchedMovies);
+        let movies = JSON.parse(localStorage.searchedMovies);
         if (window.innerWidth >= 1280) {
             addMorevisibleMovies(movies.slice(0, 12));
         }
@@ -31,7 +31,7 @@ function Movies(props) {
     };
 
     function addMoreMovies() {
-       let movies = JSON.parse(localStorage.searchedMovies);
+        let movies = JSON.parse(localStorage.searchedMovies);
         if (window.innerWidth >= 1280) {
             addMorevisibleMovies(movies.slice(0, visibleMovies.length + 3));
         }
@@ -59,9 +59,9 @@ function Movies(props) {
                 {JSON.parse(localStorage.searchedMovies).length > 0 ? (
                     <MoviesCardList anyMoreMovies={JSON.parse(localStorage.searchedMovies).length === visibleMovies.length ? false : true} moreMovies={addMoreMovies}>
                         {visibleMovies.map((el) => (
-                            <MoviesCard movie={el} key={el.id} image={el.image.url} nameRU={el.nameRU} duration={el.duration} 
-                            isSaved={props.isSaved} trailerLink={el.trailerLink} handleMovieDelete={movieDelete} 
-                            handleMovieSave={props.handleMovieSave} />
+                            <MoviesCard movie={el} key={el.id} image={el.image.url} nameRU={el.nameRU} duration={el.duration}
+                                isSaved={props.isSaved} trailerLink={el.trailerLink} handleMovieDelete={movieDelete}
+                                handleMovieSave={props.handleMovieSave} />
                         ))}
                     </MoviesCardList>
                 ) : (
