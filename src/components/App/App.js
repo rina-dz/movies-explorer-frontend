@@ -18,7 +18,6 @@ import InfoTooltip from '../InfoTooltip/InfoTooltip';
 import Preloader from '../Preloader/Preloader';
 import CurrentUserContext from '../../contexts/CurrentUserContext.js';
 
-// исправить валидацию email и navigate
 
 function App() {
 
@@ -250,6 +249,7 @@ function App() {
             openNavTabMenu={() => { setNavTabMenuOpen(!isNavTabMenuOpen); }}
             handleMovieDelete={handleMovieDelete}
             movieSearch={handleSearchSavedMovies}
+            movies={savedMovies}
           />} />
           <Route path="/profile" element={<ProtectedRoute
             loggedIn={loggedIn}

@@ -10,6 +10,7 @@ function SavedMovies(props) {
     const [visibleMovies, addMorevisibleMovies] = React.useState([]);
 
     React.useEffect(() => {
+        localStorage.setItem('savedMovies', JSON.stringify(props.movies));
         checkAndResize();
         window.addEventListener('resize', checkAndResize);
         return () => {

@@ -16,10 +16,13 @@ function ProfileForm(props) {
                     <h2 className="profile-form__title">Редактировать профиль</h2>
                     <form className="profile-form__form" onSubmit={handleSubmit}>
                         <label className="profile-form__label">Имя</label>
-                        <input className="profile-form__input" placeholder={props.userName} name="name" value={values?.name} onChange={handleChange} minLength={2} required />
+                        <input className="profile-form__input" placeholder={props.userName} name="name"
+                            value={values?.name} onChange={handleChange} minLength={2} required />
                         <span className="profile-form__input-error">{errors?.name}</span>
                         <label className="profile-form__label">E-mail</label>
-                        <input className="profile-form__input" placeholder={props.userEmail} type='email' name="email" value={values?.email} onChange={handleChange} minLength={2} required />
+                        <input className="profile-form__input" placeholder={props.userEmail} type='email'
+                            pattern='^[a-z0-9A-Z._%+-]+@[a-z0-9A-Z.-]+\.[a-zA-Z]{2,}$'
+                            name="email" value={values?.email} onChange={handleChange} minLength={2} required />
                         <span className="profile-form__input-error">{errors?.email}</span>
                         <button className={isValid ? `profile-form__button profile-form__button-enable link-button` : 'profile-form__button profile-form__button-disable'} type='submit'>Редактировать</button>
                     </form>
