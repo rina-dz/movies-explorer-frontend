@@ -5,6 +5,7 @@ import { newMainApi } from '../../utils/MainApi.js';
 import { newAuthApi } from '../../utils/AuthApi.js';
 import { newMoviesApi } from '../../utils/MoviesApi.js';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import NoTokenRoute from '../NoTokenRoute/NoTokenRoute';
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
@@ -257,10 +258,14 @@ function App() {
             userEmail={currentUser.email}
             handleSubmit={handleUpdateUserInfo}
           />} />
-          <Route path="/signup" element={<Register
+          <Route path="/signup" element={<NoTokenRoute
+            loggedIn={loggedIn}
+            element={Register}
             handleSubmit={handleRegister}
           />} />
-          <Route path="/signin" element={<Login
+          <Route path="/signin" element={<NoTokenRoute
+            loggedIn={loggedIn}
+            element={Login}
             handleSubmit={handleLogin}
           />} />
           <Route path="*" element={<NotFound />} />
