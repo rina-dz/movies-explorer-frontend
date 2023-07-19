@@ -153,7 +153,7 @@ function App() {
 
   function handleSearchSavedMovies(keyWords, checkboxState, reloadMovies) {
     setLoading(true);
-    let moviesData = savedMovies.filter(film => film.nameRU.includes(keyWords.toLowerCase()));
+    let moviesData = savedMovies.filter(film => film.nameRU.toLowerCase().includes(keyWords.toLowerCase()));
     if (checkboxState) {
       let shortCuts = moviesData.filter(film => film.duration <= 40);
       localStorage.setItem('savedMovies', JSON.stringify(shortCuts));
