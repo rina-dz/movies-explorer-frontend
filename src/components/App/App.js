@@ -94,6 +94,13 @@ function App() {
         if (data.token) {
           localStorage.setItem('token', data.token);
         }
+        newMoviesApi.getInitialMovies()
+          .then((resMovies) => {
+            addMovies(resMovies);
+          })
+          .catch((err) => {
+            console.log(err);
+          })
         localStorage.setItem('searchedMovies', JSON.stringify(movies));
         localStorage.setItem('checkboxState', false);
         localStorage.setItem('keyWords', '');
@@ -131,47 +138,30 @@ function App() {
 
   function handleSearchMovies(keyWords, checkboxState, reloadMovies) {
     setLoading(true);
-    newMoviesApi.getInitialMovies()
-      .then((resMovies) => {
-        let moviesData = resMovies.filter(film => film.nameRU.toLowerCase().includes(keyWords.toLowerCase()));
-        if (checkboxState) {
-          let shortCuts = moviesData.filter(film => film.duration <= 40);
-          localStorage.setItem('searchedMovies', JSON.stringify(shortCuts));
-        } else {
-          localStorage.setItem('searchedMovies', JSON.stringify(moviesData));
-        }
-        localStorage.setItem('keyWords', keyWords);
-        localStorage.setItem('checkboxState', checkboxState);
-        reloadMovies();
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      })
+    let moviesData = movies.filter(film => film.nameRU.toLowerCase().includes(keyWords.toLowerCase()));
+    if (checkboxState) {
+      let shortCuts = moviesData.filter(film => film.duration <= 40);
+      localStorage.setItem('searchedMovies', JSON.stringify(shortCuts));
+    } else {
+      localStorage.setItem('searchedMovies', JSON.stringify(moviesData));
+    }
+    localStorage.setItem('keyWords', keyWords);
+    localStorage.setItem('checkboxState', checkboxState);
+    reloadMovies();
+    setLoading(false);
   }
 
   function handleSearchSavedMovies(keyWords, checkboxState, reloadMovies) {
     setLoading(true);
-    newMainApi.getSavedMovies()
-      .then((resMovies) => {
-        const moviesArray = resMovies.data;
-        let moviesData = moviesArray.filter(film => film.nameRU.includes(keyWords.toLowerCase()));
-        if (checkboxState) {
-          let shortCuts = moviesData.filter(film => film.duration <= 40);
-          localStorage.setItem('savedMovies', JSON.stringify(shortCuts));
-        } else {
-          localStorage.setItem('savedMovies', JSON.stringify(moviesData));
-        }
-        reloadMovies();
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      })
+    let moviesData = savedMovies.filter(film => film.nameRU.includes(keyWords.toLowerCase()));
+    if (checkboxState) {
+      let shortCuts = moviesData.filter(film => film.duration <= 40);
+      localStorage.setItem('savedMovies', JSON.stringify(shortCuts));
+    } else {
+      localStorage.setItem('savedMovies', JSON.stringify(moviesData));
+    }
+    reloadMovies();
+    setLoading(false);
   }
 
   function handleMovieSave(movie) {

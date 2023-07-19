@@ -39,7 +39,6 @@ class authApi {
 
     //авторизация 
     authorization(password, email) {
-        console.log({password, email});
         return this._request(`${this.baseUrl}/signin`, {
             method: 'POST',
             headers: {
