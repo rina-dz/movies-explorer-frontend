@@ -1,6 +1,5 @@
 import React from 'react';
 import "./MoviesCardList.css";
-//import MoviesCard from '../MoviesCard/MoviesCard';
 
 function MoviesCardList(props) {
 
@@ -9,9 +8,11 @@ function MoviesCardList(props) {
             <div className="movies__container">
                 {props.children}
             </div>
+            {props.anyMoreMovies ? (
             <div className="movies__more">
-                <button className="movies__more-button link-button">Ещё</button>
+                <button className="movies__more-button link-button" onClick={props.moreMovies}>Ещё</button>
             </div>
+            ) : (<></>)}
         </section>
     )
 }

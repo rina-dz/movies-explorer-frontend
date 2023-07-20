@@ -1,0 +1,19 @@
+.saved-movies__text {
+    max-width: 400px;
+    margin: 100px auto;
+    color: #A0A0A0;
+    text-align: center;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+@media screen and (max-device-width: 600px) {
+    .saved-movies__text {
+        max-width: 150px;
+        margin: 50px auto;
+        font-size: 20px;
+    }
+}

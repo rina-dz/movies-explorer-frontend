@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./NavTabMenu.css";
+import { usePopupClose } from "../../hooks/usePopupClose.js";
 import profile_icon from '../../images/profile_icon.svg';
 import close_icon from '../../images/close_icon.svg';
 
 function NavTabMenu(props) {
+
+  usePopupClose(props.isOpen, props.closeMenu);
 
     return (
         <div className={`navtab-menu ${props.isOpen ? 'navtab-menu_visible' : ''}`}>
